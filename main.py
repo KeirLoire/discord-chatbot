@@ -29,8 +29,6 @@ class Client(discord.Client):
                     else:
                         await message.channel.send('No response from OpenAI server.')
 
-if (config['OpenAI']['token']):
-    openai.api_key = config['OpenAI']['token']    
-
+openai.api_key = config['OpenAI']['token']
 client = Client()
 client.run(config['Discord']['token'])
